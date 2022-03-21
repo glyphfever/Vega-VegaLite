@@ -10,18 +10,17 @@
   <script>
     const spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Distribution of Body Mass of Penguins",
-  "width": 400,
-  "height": 80,
-  "data": {"url": "https://raw.githubusercontent.com/vega/vega-datasets/next/data/penguins.json"},
-  "mark": "area",
-  "transform": [
-    {"density": "Body Mass (g)", "groupby": ["Species"], "extent": [2500, 6500]}
-  ],
+  "title": "Project Task Timeline",
+  "width": 800,
+  "height": 600,
+  "data": {"url": "https://sheetdb.io/api/v1/4moaaikocobco"},
+  "mark": "bar",
+  
   "encoding": {
-    "x": {"field": "value", "type": "quantitative", "title": "Body Mass (g)"},
-    "y": {"field": "density", "type": "quantitative", "stack": "zero"},
-    "color": {"field": "Species", "type": "nominal"}
+    "x": {"field": "startDate", "type": "temporal", "title": null},
+    "x2":{"field":"endDate"},
+    "y": {"field": "project", "type": "nominal"},
+    "color": {"field": "task", "type": "nominal"}
   },
   "config": {}
 };

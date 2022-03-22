@@ -15,10 +15,8 @@
     "url": "https://raw.githubusercontent.com/vega/vega-datasets/next/data/cars.json"
   },
   "mark": "tick",
-  "encoding": {
-    "x": {"field": "Horsepower", "type": "quantitative"},
-    "y": {"field": "Cylinders", "type": "ordinal"}
-  },
+  "encoding": {"x":{"field": "Horsepower","type": "quantitative","title":"Horsepower"}
+  },    
   "config": {}
 };
     vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);

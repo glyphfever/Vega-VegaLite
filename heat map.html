@@ -14,20 +14,30 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vega/vega-datasets/next/data/cars.json"
   },
+  "width":500,
+  "height":200,
+  "config": {
+    "axis":{
+      "grid":true,
+      "tickBand":"extent"
+    }
+  },
   "mark": "rect",
   "encoding": {
-    "x":{
+    "y":{
       "field": "Origin",
       "type": "nominal"
     },
-    "y":{
-      "field": "Cylinder",
-      "type": "quantitative"
+    "x":{
+      "field": "Cylinders",
+      "type": "ordinal"
     }
-  },    
-  "config": {}
+  }  
 };
-    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed("#vis", spec, 
+    {
+      mode: "vega-lite"
+    }).then(console.log).catch(console.warn);
   </script>
 </body>
 </html>

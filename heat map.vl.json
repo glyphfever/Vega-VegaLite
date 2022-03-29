@@ -10,17 +10,26 @@
       "axis":{
         "grid":true,
         "tickBand":"extent"
+        
       }
     },
     "mark": "rect",
     "encoding": {
       "y":{
         "field": "Origin",
-        "type": "nominal"
+        "type": "nominal",
+        "title":null
       },
       "x":{
         "field": "Cylinders",
-        "type": "ordinal"
+        "type": "ordinal",
+        "axis":{
+          "position":1,
+          "labelAngle":0
+        }
+      },
+      "color":{
+        "aggregate":"mean", "field":"Horsepower"
       }
     }  
   }

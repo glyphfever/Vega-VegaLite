@@ -21,10 +21,12 @@
             }
         },
         "color":{
-            "field": "Species"
+            "field": "Species",
+            "type": "nominal"
         },
         "shape":{
-            "field":"Species"
+            "field":"Species",
+            "type": "nominal"
         }
     }
 

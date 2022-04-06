@@ -47,7 +47,7 @@
   },
  "transform": [
     {
-        "calculate": "if(datum.type === 'Strongly Disagree',-2,0) +                     if(datum.type === 'Disagree',-1,0) + if(datum.type === 'Neither agree nor disagree',0,0) + if(datum.type === 'Agree',1,0) + if(datum.type === 'Strongly agree',2,0)", "as": "q_order"
+        "calculate": "if(datum.type === 'Strongly Disagree',-2,0) + if(datum.type === 'Disagree',-1,0) + if(datum.type === 'Neither agree nor disagree',0,0) + if(datum.type === 'Agree',1,0) + if(datum.type === 'Strongly agree',2,0)", "as": "q_order"
     }
 
  ]

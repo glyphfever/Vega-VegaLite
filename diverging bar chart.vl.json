@@ -47,7 +47,7 @@
   },
  "transform": [
     {
-        "calculate": "if(datum.type === 'Strongly Disagree',-2,0) + if(datum.type === 'Disagree',-1,0) + if(datum.type === 'Neither agree nor disagree',0,0) + if(datum.type === 'Agree',1,0) + if(datum.type === 'Strongly agree',2,0)", "as": "q_order"
+      "calculate": "if(datum.type === 'Strongly Disagree',-2,0) + if(datum.type === 'Disagree',-1,0) + if(datum.type === 'Neither agree nor disagree',0,0) + if(datum.type === 'Agree',1,0) + if(datum.type === 'Strongly agree',2,0)", "as": "q_order"
     },
     {
       "calculate": "if(datum.type === 'Strongly Disagree' || datum.type === 'Disagree', datum.percentage,0) + if(datum.type === 'if(datum.type === 'Strongly Disagree' || datum.type === 'Disagree', datum.percentage,0)', datum.percentage/2,0)", "as": "signed_percentage"
@@ -73,8 +73,11 @@
  "mark": "bar",
  "encoding": {
    "x": {
-     "field":"nx"
-   }
+     "field":"nx",
+     "type": "quantitative",
+     "title":"Percentage"
+   },
+   "x2"
  }
 
 }

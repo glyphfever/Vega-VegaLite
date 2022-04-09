@@ -73,11 +73,31 @@
  "mark": "bar",
  "encoding": {
    "x": {
-     "field":"nx",
+     "field": "nx",
      "type": "quantitative",
-     "title":"Percentage"
+     "title": "Percentage"
    },
-   "x2"
+   "x2":{ "field":"nx2" },
+   "y":{
+     "field":"question",
+     "type": "nominal",
+     "title":"Question",
+     "axis":{
+       "offset":5,
+       "ticks":false,
+       "minExtent":60,
+       "domain": false
+     }
+   },
+   "color":{
+     "field":"type",
+     "type": "nominal",
+     "title":"Response",
+     "scale":{
+      "domain": ["Strongly disagree", "Disagree", "Neither agree nor disagree", "Agree", "Strongly agree"],
+      "range": ["#c30d24", "#f3a583", "#cccccc", "#94c6da", "#1770ab"],
+      "type": "ordinal"
+     }  
+   }
  }
-
 }

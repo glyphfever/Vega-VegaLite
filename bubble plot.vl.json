@@ -1,9 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+    "description": "Bubble chart to display global diasters.",
     "data": {
         "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/disasters.csv"
     },
+    "width":600,
+    "height":500,
     "transform": [
         {
            "filter":"datum.Entity !== 'All natural disasters'"
@@ -18,16 +20,16 @@
     "encoding": {
         "x":{
             "field":"Year",
-            "type": "temporal"
+            "type": "temporal",
+            "axis":{"grid": false}
         },
         "y":{
             "field":"Entity",
             "type": "nominal",
-            "title":null
-
+            "axis":{"title":null}
         },
         "size":{
-            "field":"Death",
+            "field":"Deaths",
             "type": "quantitative",
             "title":"Annual Global Death",
             "legend":{"clipHeight": 30},

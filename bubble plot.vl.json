@@ -32,8 +32,8 @@
             "field":"Deaths",
             "type": "quantitative",
             "title":"Annual Global Death",
-            "legend":{"clipHeight": 30},
-            "scale":{"rangeMax": 5000}
+            "legend":{"clipHeight": 20},
+            "scale":{"rangeMax": 3000}
         },
         "color":{
             "field":"Entity",

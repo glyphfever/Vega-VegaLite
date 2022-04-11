@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+    "data": {
+        "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/disasters.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "field": "Deaths",
+                    "op": "sum",
+                    "as": "Deaths_sum"
+                }
+                
+            ],
+            "groupby": ["Diasters"]
+        }
+    ],
+    "mark":"circle",
+    "encoding": {
+        "x":{
+            "field":"Year",
+            "type": "temporal"
+        },
+        "y":{
+            "field":"Deaths_sum",
+            "type": "quantitative",
+            "title":null
+
+        },
+        "color":{
+
+        }
+    }
+ 
+
+}

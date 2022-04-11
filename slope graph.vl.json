@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Multi series line chart.",
+    "description": "Slope graph showing the change in yeild for barley sites",
     "data": {
-        "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/stocks.csv"
+        "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/barley.json"
     },
     "mark":"line",
     "encoding": {

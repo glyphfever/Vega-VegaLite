@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble chart to display global diasters.",
+    "data": {
+        "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/stocks.csv"
+    },
+    "mark":"line",
+    "encoding": {
+        "x":{
+            "field":"date",
+            "type": "temporal",
+            "axis":{"grid": false}
+        },
+        "y":{
+            "field":"price",
+            "type": "quantitative",
+            "axis":{"title":"Price"}
+        },
+ 
+        "color":{
+            "field":"symbol",
+            "type": "nominal"
+
+        }
+    }
+ 
+
+}

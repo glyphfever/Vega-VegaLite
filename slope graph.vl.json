@@ -4,21 +4,43 @@
     "data": {
         "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/barley.json"
     },
+    "width":{"step": 100},
+    "height":500,
+    "transform": [
+        {
+            "joinaggregate": [
+                {
+                    "field": "yield",
+                    "op": "median",
+                    "as": "median_yield"
+                }            
+            ],
+            "groupby": ["site","year"]
+        },
+        {
+            "calculate": "datum.median_yield", "as": "median_yield"
+        }
+    ],
     "mark":"line",
     "encoding": {
         "x":{
-            "field":"date",
-            "type": "temporal",
-            "axis":{"grid": false}
+            "field":"year",
+            "type": "nominal",
+            "axis":{
+                "grid": false,
+                "position":1,
+                "labelAngle":0
+            }
         },
         "y":{
-            "field":"price",
+            
+            "field":"median_yield",
             "type": "quantitative",
-            "axis":{"title":"Price"}
+            "axis":{"title":"Median Yield"}
         },
  
         "color":{
-            "field":"symbol",
+            "field":"site",
             "type": "nominal"
 
         }

@@ -6,30 +6,37 @@
     },
     "transform": [
         {
-            "aggregate": [
-                {
-                    "field": "Deaths",
-                    "op": "sum",
-                    "as": "Deaths_sum"
-                }
-                
-            ],
-            "groupby": ["Diasters"]
+           "filter":"datum.Entity !== 'All natural disasters'"
         }
     ],
-    "mark":"circle",
+    "mark":{
+        "type": "circle",
+        "opacity":0.8,
+        "stroke":"black",
+        "strokeWidth":1
+    },
     "encoding": {
         "x":{
             "field":"Year",
             "type": "temporal"
         },
         "y":{
-            "field":"Deaths_sum",
-            "type": "quantitative",
+            "field":"Entity",
+            "type": "nominal",
             "title":null
 
         },
+        "size":{
+            "field":"Death",
+            "type": "quantitative",
+            "title":"Annual Global Death",
+            "legend":{"clipHeight": 30},
+            "scale":{"rangeMax": 5000}
+        },
         "color":{
+            "field":"Entity",
+            "type": "nominal",
+            "legend":null
 
         }
     }

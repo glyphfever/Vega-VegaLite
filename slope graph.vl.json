@@ -8,7 +8,7 @@
     "height":500,
     "transform": [
         {
-            "joinaggregate": [
+            "aggregate": [
                 {
                     "field": "yield",
                     "op": "median",

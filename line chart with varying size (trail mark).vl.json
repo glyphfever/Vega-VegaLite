@@ -1,0 +1,10 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Slope graph showing the change in yeild for barley sites",
+    "data": {
+        "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/stocks.csv"
+    }
+
+ 
+
+}

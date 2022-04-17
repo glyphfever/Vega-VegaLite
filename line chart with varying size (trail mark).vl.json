@@ -3,6 +3,26 @@
     "description": "Slope graph showing the change in yeild for barley sites",
     "data": {
         "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/stocks.csv"
+    },
+    "mark":"trail",
+    "encoding": {
+        "x":{
+            "field":"date",
+            "type": "temporal",
+            "title":null
+        },
+        "y":{
+            "field":"price",
+            "type": "quantitative",
+            "title":"Price"
+        },
+        "color":{
+            "field":"symbol"
+        },
+        "size":{
+            "field":"price",
+            "type": "quantitative"
+        }
     }
 
  

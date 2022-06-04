@@ -4,8 +4,7 @@
     "data": {
         "url":"https://raw.githubusercontent.com/vega/vega-datasets/next/data/barley.json"
     },
-    "width":{"step": 170},
-    "height":500,
+    "title":"Barley Yield Comparison Between 1932 and 1931",
     "transform": [
         {
             "aggregate": [

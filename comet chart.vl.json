@@ -7,24 +7,24 @@
     "title":"Barley Yield Comparison Between 1932 and 1931",
     "transform": [
         {
-            "aggregate": [
-                {
-                    "field": "yield",
-                    "op": "median",
-                    "as": "median_yield"
-                }            
-            ],
-            "groupby": ["site","year"]
+            "pivot": "year", "value": "yield", 
+            "groupby": ["site","variety"]
         },
         {
-            "calculate": "datum.median_yield", "as": "median_yield"
+            "fold": ["1931","1932"], "as": ["year","yield"]
+        },
+        {
+            "calculate": "toNumber(datum.year)", "as": "year"
+        },
+        {
+            "calculate": "datum['1932'] - datum['1931']", "as": "Delta"
         }
     ],
-    "mark":"line",
+    "mark":"trail",
     "encoding": {
         "x":{
             "field":"year",
-            "type": "nominal",
+           
             "axis":{
                 "grid": false,
                 "position":1,

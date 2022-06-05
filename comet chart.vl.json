@@ -23,17 +23,11 @@
     "mark":"trail",
     "encoding": {
         "x":{
-            "field":"year",
-           
-            "axis":{
-                "grid": false,
-                "position":1,
-                "labelAngle":0
-            }
+            "field":"year"
         },
         "y":{
             
-            "field":"median_yield",
+            "field":"yield",
             "type": "quantitative",
             "axis":{"title":"Median Yield"}
         },

@@ -1,0 +1,169 @@
+{
+  "data": {"name": "dataset"},
+  "spacing": 0,
+  "facet": {
+    "row": {
+      "field": "Semesters",
+      "header": {
+        "title": null,
+        "labelAlign": "left",
+        "labelAngle": 0,
+        "labelAnchor": "middle",
+        "labelBaseline": "line-top",
+        "labelLineHeight": 0,
+        "labelFontSize": 30
+      }
+    }
+  },
+  "spec": {
+    "width": 500,
+    "height": {"step": 25},
+    "layer": [
+      {
+        "mark": {"type": "rule"},
+        "encoding": {
+          "x": {
+            "aggregate": "min",
+            "field": "Rating",
+            "type": "quantitative",
+            "axis": {
+              "grid": true,
+              "gridColor": "#c3c3c3",
+              "title": "Ratings",
+              "labelFontSize": 10,
+              "format": "~s",
+              "tickCount": 3
+            },
+            "scale": {"domain": [5, 8]}
+          },
+          "y": {
+            "field": "Questions",
+            "type": "nominal",
+            "axis": {
+              "grid": true,
+              "gridColor": "#e0e0e0",
+              "ticks": true,
+              "tickColor": "#ddd",
+              "tickBand": "extent",
+              "tickSize": 350,
+              "title": null,
+              "labelLimit": 350,
+              "labelPadding": -350,
+              "labelFontSize": 16
+            }
+          },
+          "x2": {
+            "aggregate": "max",
+            "field": "Rating"
+          },
+          "opacity": {
+            "condition": {
+              "test": {
+                "field": "__selected__",
+                "equal": "off"
+              },
+              "value": 0.3
+            },
+            "value": 1
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "size": 100,
+          "stroke": "black",
+          "strokeWidth": 0.5
+        },
+        "encoding": {
+          "y": {
+            "field": "Questions",
+            "type": "nominal"
+          },
+          "x": {
+            "aggregate": "sum",
+            "field": "Rating",
+            "title": null,
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Entity",
+            "legend": {
+              "title": null,
+              "orient": "top",
+              "symbolSize": 200,
+              "symbolStrokeWidth": 0.5,
+              "symbolType": "circle"
+            },
+            "scale": {
+              "domain": [
+                "BANA",
+                "Shaffer",
+                "College"
+              ],
+              "range": [
+                "#7A7b7b",
+                "#25a1ea",
+                "#bdb7b2"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {
+              "test": {
+                "field": "__selected__",
+                "equal": "off"
+              },
+              "value": 0.3
+            },
+            "value": 1
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "color": "#25a1ea",
+          "dx": 20,
+          "fontSize": 14
+        },
+        "encoding": {
+          "x": {
+            "aggregate": "max",
+            "field": "Rating",
+            "type": "quantitative",
+            "axis": {
+              "grid": true,
+              "gridColor": "#c3c3c3",
+              "title": "Ratings",
+              "labelFontSize": 10,
+              "format": "~s",
+              "tickCount": 3
+            },
+            "scale": {"domain": [5, 8]}
+          },
+          "y": {
+            "field": "Questions",
+            "type": "nominal",
+            "axis": {
+              "grid": true,
+              "gridColor": "#e0e0e0",
+              "ticks": true,
+              "tickColor": "#ddd",
+              "tickBand": "extent",
+              "tickSize": 350,
+              "title": null,
+              "labelLimit": 350,
+              "labelPadding": -350,
+              "labelFontSize": 16
+            }
+          },
+          "text": {
+            "field": "Rating",
+            "aggregate": "max"
+          }
+        }
+      }
+    ]
+  }
+}
